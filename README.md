@@ -27,6 +27,10 @@ Check the test folder for use examples.
 - Fix Julian date to standard date
 - Add implementation for security params
 
+## IATA
+
+Link to the BCBP standard: [BCBP-Implementation-Guide](https://www.iata.org/whatwedo/stb/Documents/BCBP-Implementation-Guide-5th-Edition-June-2016.pdf)
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/cluny85/bcbp-parser/blob/master/CONTRIBUTING.md) for details on code of conduct, and the process for submitting pull requests.
