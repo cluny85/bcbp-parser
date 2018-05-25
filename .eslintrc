@@ -1,0 +1,46 @@
+{
+  env: {
+    node: true,
+    mocha: true
+  },
+  extends: "airbnb",      # Use the AirBnB JS styleguide - https:#github.com/airbnb/javascript
+  rules: {                  # We can add/overwrite custom rules here
+    # React Native has JSX in JS files
+    react/jsx-filename-extension: ['error', { extensions: ['.js', '.jsx'] }],
+    # React Native includes images via require('../images/example.png')
+    global-require: 'off',
+    comma-dangle: ["error", "never"],
+    key-spacing: ["error", {
+      "singleLine": {
+        "afterColon": true
+      },
+      "multiLine": {
+        "afterColon": true,
+        "align": "colon"
+      }
+    }],
+    react/forbid-prop-types: ["error", {
+      "forbid": ["any"]
+    }],
+    comma-spacing: ["error", {
+      "after": true,
+      "before": false
+    }],
+    no-use-before-define: ["error", { "functions": false, "classes": false }],
+    no-multi-spaces: ["error", {
+      exceptions: {
+        "ObjectExpression": true,
+        "VariableDeclarator": true,
+        "ImportDeclaration": true
+      }
+    }],
+    no-unused-expressions: ["error", {
+      "allowTernary": true
+    }],
+    no-plusplus: ["error", {
+      "allowForLoopAfterthoughts": true
+    }],
+    no-underscore-dangle: ["error", { "allow": ["_id"] }],
+    no-nested-ternary: "off"
+  }
+}
