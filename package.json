@@ -1,8 +1,11 @@
 {
     "name": "bcbp-parser",
     "version": "0.0.1",
-    "author": "Oscar Mesa",
     "description": "BCBP boarding pass code parser",
+    "author": "Oscar Mesa",
+    "email" : "oscar@bob.io",
+    "url" : "https://bob.io/",
+    "homepage": "https://github.com/cluny85/bcbp-parser#readme",
     "main": "index.js",
     "repository": {
         "type": "git",
