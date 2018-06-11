@@ -1,6 +1,6 @@
 {
     "name": "bcbp-parser",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "BCBP boarding pass code parser",
     "author": "Oscar Mesa",
     "email": "oscar@bob.io",
