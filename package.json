@@ -1,10 +1,10 @@
 {
     "name": "bcbp-parser",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "BCBP boarding pass code parser",
     "author": "Oscar Mesa",
-    "email" : "oscar@bob.io",
-    "url" : "https://bob.io/",
+    "email": "oscar@bob.io",
+    "url": "https://bob.io/",
     "homepage": "https://github.com/cluny85/bcbp-parser#readme",
     "main": "index.js",
     "repository": {
@@ -23,10 +23,15 @@
     ],
     "scripts": {
         "test": "node ./node_modules/istanbul/lib/cli.js cover -x 'test/**/*.test.js' _mocha -- -R spec test/**/*.test.js",
-        "coveralls": "npm test -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+        "coveralls": "npm test -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+        "prepublish": "babel lib --presets babel-preset-es2015 --out-dir dist",
+        "build": "babel lib --presets babel-preset-es2015 --out-dir dist"
     },
     "dependencies": {},
     "devDependencies": {
+        "babel-cli": "6",
+        "babel-preset-es2015": "6",
+        "babel": "^6.23.0",
         "chai": "latest",
         "chai-as-promised": "latest",
         "coveralls": "latest",
@@ -40,5 +45,5 @@
         "mocha-lcov-reporter": "latest",
         "sinon": "latest"
     },
-    "license": "MIT"
+    "license": "Apache 2.0"
 }
