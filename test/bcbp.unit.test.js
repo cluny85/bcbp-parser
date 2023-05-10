@@ -11,7 +11,6 @@ describe('[unit] bcbp', () => {
   describe('.parseBCBP', () => {
     it('must return formated json object', () => {
       const result = parseBCBP(mock.bcbp1);
-      console.log(result);
       const keys = ['passenger', 'pnr', 'origin', 'destination',
         'airline', 'flight_number', 'flight_date', 'seat', 'checkin_number'];
       expect(result).to.include.keys(keys);
