@@ -1,4 +1,4 @@
-const expect = require('chai').expect;
+const { expect } = require('chai');
 const { parseBCBP } = require('../lib/bcbp');
 
 const mock = {
@@ -29,7 +29,7 @@ describe('[unit] bcbp', () => {
       });
     });
 
-    it.only('must return formated json object with normal dates', () => {
+    it('must return formated json object with normal dates', () => {
       const result = parseBCBP(mock.bcbp3, true);
       const keys = ['passenger', 'pnr', 'origin', 'destination',
         'airline', 'flight_number', 'flight_date', 'seat', 'checkin_number', 'flight_date', 'date_pass_issue'];
