@@ -1,6 +1,6 @@
 {
     "name": "bcbp-parser",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "BCBP boarding pass code parser",
     "author": "Oscar Mesa",
     "email": "oscar@bob.io",
@@ -29,9 +29,9 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "babel-cli": "6",
-        "babel-preset-es2015": "6",
-        "babel": "^6.23.0",
+        "babel": "6.23.0",
+        "babel-cli": "6.26.0",
+        "babel-preset-es2015": "6.24.1",
         "chai": "latest",
         "chai-as-promised": "latest",
         "coveralls": "latest",

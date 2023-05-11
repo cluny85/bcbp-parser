@@ -13,12 +13,15 @@ var _require = require('./dataset'),
 var _require2 = require('./julian'),
     getJulianDate = _require2.getJulianDate;
 
-var _require3 = require('./utils'),
-    hexToDec = _require3.hexToDec;
+var _require3 = require('./date'),
+    getUTCDate = _require3.getUTCDate;
 
-var _require4 = require('./bagTag'),
-    isBagTag = _require4.isBagTag,
-    parseBagTag = _require4.parseBagTag;
+var _require4 = require('./utils'),
+    hexToDec = _require4.hexToDec;
+
+var _require5 = require('./bagTag'),
+    isBagTag = _require5.isBagTag,
+    parseBagTag = _require5.parseBagTag;
 
 var hasConditionalFields = function hasConditionalFields(barCode) {
   return barCode.length - 64 > 0;
@@ -46,6 +49,8 @@ module.exports = {
 };
 
 function parseBCBP(barCode) {
+  var UTCDate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
   if (!barCode) return { error: 'Not a valid BCBP.' };
   if (isBagTag(barCode)) return parseBagTag(barCode);
   if (!isValidBCBP(barCode)) return { error: 'Not a valid BCBP.' };
@@ -69,7 +74,7 @@ function parseBCBP(barCode) {
 
       switch (key) {
         case 'flight_date':
-          result[key] = getJulianDate(value);
+          result[key] = UTCDate ? getUTCDate(value) : getJulianDate(value);
           return;
         case 'compartment_code':
           result[key] = getCodeMessage(value, classTypes);
@@ -88,7 +93,7 @@ function parseBCBP(barCode) {
           result[key] = getCodeMessage(value, sourceBPIssuer);
           return;
         case 'date_pass_issue':
-          result[key] = getJulianDate(value);
+          result[key] = UTCDate ? getUTCDate(value) : getJulianDate(value);
           return;
         case 'document_type':
           result[key] = getCodeMessage(value, documentTypes);
