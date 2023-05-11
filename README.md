@@ -24,7 +24,6 @@ Check the test folder for use examples.
 
 ## TODO
 
-- Fix Julian date to standard date
 - Add implementation for security params
 
 ## IATA

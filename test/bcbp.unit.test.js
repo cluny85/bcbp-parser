@@ -28,10 +28,11 @@ describe('[unit] bcbp', () => {
       });
     });
 
-    it('must return formated json object with normal dates', () => {
+    it('must return formated json object with UTC dates', () => {
       const result = parseBCBP(mock.bcbp3, true);
       const keys = ['passenger', 'pnr', 'origin', 'destination',
         'airline', 'flight_number', 'flight_date', 'seat', 'checkin_number', 'flight_date', 'date_pass_issue'];
+      console.log('result', result);
       expect(result).to.include.keys(keys);
       Object.keys(keys).forEach((item) => {
         expect(item).to.not.be.eq(undefined);
