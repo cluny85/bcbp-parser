@@ -42,7 +42,7 @@ describe('[unit] bcbp', () => {
       expect(result.date_pass_issue.getFullYear()).to.be.greaterThanOrEqual(currentYear);
     });
 
-    it('must work with short BCPs', () => {
+    it('must work with short BCBPs', () => {
       const result = parseBCBP(mock.bcbp4, true);
       const keys = ['passenger', 'pnr', 'origin', 'destination',
         'airline', 'flight_number', 'flight_date', 'seat', 'checkin_number', 'flight_date', 'date_pass_issue'];
