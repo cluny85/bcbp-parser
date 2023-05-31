@@ -52,6 +52,7 @@ describe('[unit] bcbp', () => {
       });
       const currentYear = new Date().getFullYear();
       expect(result.flight_date.getFullYear()).to.be.greaterThanOrEqual(currentYear);
+      expect(result.date_pass_issue).to.be.eq('');
     });
   });
 });
