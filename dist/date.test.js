@@ -21,6 +21,10 @@ describe('[unit] lib', function () {
     clock.restore();
   });
   describe('getUTCDate', function () {
+    it('must empty', function () {
+      var date = getUTCDate('');
+      expect(date).to.be.eq('');
+    });
     it('must return 7th of july of the current year', function () {
       var date = getUTCDate('250');
       expect(date.toISOString()).to.be.eq('2023-09-07T00:00:00.000Z');

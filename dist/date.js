@@ -19,10 +19,11 @@ var getYear = function getYear(julianYearLastDigit) {
   }
   return currentYear;
 };
-
 var iataJulianDateRegexp = /^(?<julianYearLastDigit>\d)?(?<julianDayOfYear>\d{3})$/;
 
 var getUTCDate = function getUTCDate(input) {
+  if (!input || !input.length) return input;
+
   var _input$match = input.match(iataJulianDateRegexp),
       _input$match$groups = _input$match.groups,
       julianYearLastDigit = _input$match$groups.julianYearLastDigit,
