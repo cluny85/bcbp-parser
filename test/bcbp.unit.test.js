@@ -67,5 +67,10 @@ describe('[unit] bcbp', () => {
       const currentYear = new Date().getFullYear();
       expect(result.flight_date.getFullYear()).to.be.greaterThanOrEqual(currentYear);
     });
+
+    it('must return error', () => {
+      const result = parseBCBP('MSDSADSADSADSADASDSADSADSADSADSADSADSADSADASDSADSDAASDSADSADSADSADSADSADSADSADSADSDSADSADSADSADSADSADSADSADSADSADSADSADSADSDAASD', true);
+      expect(result.error).to.be.eq('Invalid input, no matching groups found for input (DSA)');
+    });
   });
 });
